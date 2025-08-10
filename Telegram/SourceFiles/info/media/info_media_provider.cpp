@@ -77,7 +77,7 @@ Type Provider::type() {
 }
 
 bool Provider::hasSelectRestriction() {
-	if (_peer->session().frozen()) {
+	/*if (_peer->session().frozen()) {
 		return true;
 	} else if (_peer->allowsForwarding()) {
 		return false;
@@ -86,7 +86,8 @@ bool Provider::hasSelectRestriction() {
 	} else if (const auto channel = _peer->asChannel()) {
 		return !channel->canDeleteMessages();
 	}
-	return true;
+	return true;*/
+	return false;
 }
 
 rpl::producer<bool> Provider::hasSelectRestrictionChanges() {

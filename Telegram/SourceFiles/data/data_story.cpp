@@ -404,12 +404,14 @@ bool Story::out() const {
 }
 
 bool Story::canDownloadIfPremium() const {
-	return !forbidsForward() || _peer->isSelf();
+	return true;
+//	return !forbidsForward() || _peer->isSelf();
 }
 
 bool Story::canDownloadChecked() const {
-	return _peer->isSelf()
-		|| (canDownloadIfPremium() && _peer->session().premium());
+	return true;
+//	return _peer->isSelf()
+//		|| (canDownloadIfPremium() && _peer->session().premium());
 }
 
 bool Story::canShare() const {
